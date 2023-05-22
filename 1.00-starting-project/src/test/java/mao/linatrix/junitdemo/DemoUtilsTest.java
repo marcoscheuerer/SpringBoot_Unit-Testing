@@ -1,24 +1,13 @@
 package mao.linatrix.junitdemo;
 
-import com.luv2code.junitdemo.DemoUtils;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class DemoUtilsTest {
 
     DemoUtils demoUtils;
-
-    @BeforeAll
-    static void setupBeforeEachClass() {
-        System.out.println("@BeforeAll executes only once before all test methods execution in the class");
-    }
-
-    @AfterAll
-    static void tearDownAfterAll()
-    {
-        System.out.println("@AfterAll executes only once after all methods execution in the class");
-    }
 
     @BeforeEach
     void setupBeforeEach() {
@@ -26,13 +15,9 @@ public class DemoUtilsTest {
         System.out.println("@BeforeEach executes before the execution of each test method");
     }
 
-    @AfterEach
-    void tearDownAfterEach() {
-        System.out.println("Running @AfterEach");
-    }
-
     @Test
-    void testEqualsAndNotEquals() {
+//    @DisplayName("Equals And Not Equals")
+    void test_Equals_And_Not_Equals() {
 
         System.out.println("Running test: testEqualsAndNotEquals");
 
@@ -49,7 +34,8 @@ public class DemoUtilsTest {
     }
 
     @Test
-    void testNullAndNotNull() {
+//    @DisplayName("Null And Not Null")
+    void test_Null_And_Not_Null() {
         System.out.println("Running test: testNullAndNotNull");
 
         // set up
@@ -62,5 +48,22 @@ public class DemoUtilsTest {
         assertNull(demoUtils.checkNull(str1), "Object should be null");
         assertNotNull(demoUtils.checkNull(str2), "Object should not be null");
     }
+
+//    @AfterEach
+//    void tearDownAfterEach() {
+//        System.out.println("Running @AfterEach");
+//    }
+//
+//    @BeforeAll
+//    static void setupBeforeEachClass() {
+//        System.out.println("@BeforeAll executes only once before all test methods execution in the class");
+//    }
+//
+//    @AfterAll
+//    static void tearDownAfterAll()
+//    {
+//        System.out.println("@AfterAll executes only once after all methods execution in the class");
+//    }
+
 
 }

@@ -1,4 +1,4 @@
-package com.luv2code.junitdemo;
+package mao.linatrix.junitdemo;
 
 import java.util.List;
 
