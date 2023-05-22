@@ -65,5 +65,23 @@ public class DemoUtilsTest {
 //        System.out.println("@AfterAll executes only once after all methods execution in the class");
 //    }
 
+    @Test
+    @DisplayName("Same and Not Same")
+    void testSameAndNotSame() {
+        String str = "luv2code";
+
+        assertSame(demoUtils.getAcademy(), demoUtils.getAcademyDuplicate(), "Objects should refer to same object");
+        assertNotSame(str, demoUtils.getAcademy(), "Objects should not refer to same object");
+    }
+
+    @Test
+    @DisplayName("True and False")
+    void testTrueAndFalse() {
+        int gradeOne = 10;
+        int gradeTwo = 5;
+
+        assertTrue(demoUtils.isGreater(gradeOne, gradeTwo), "This should return true");
+        assertFalse(demoUtils.isGreater(gradeTwo, gradeOne), "This should return false");
+    }
 
 }
