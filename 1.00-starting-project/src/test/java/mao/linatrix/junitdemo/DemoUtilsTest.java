@@ -7,7 +7,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+//@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+//@TestMethodOrder(MethodOrderer.DisplayName.class)
+//@TestMethodOrder(MethodOrderer.MethodName.class)
+//@TestMethodOrder(MethodOrderer.Random.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -19,7 +23,8 @@ public class DemoUtilsTest {
     }
 
     @Test
-//    @DisplayName("Equals And Not Equals")
+    @DisplayName("Equals And Not Equals")
+    @Order(3)
     void test_Equals_And_Not_Equals() {
 
         System.out.println("Running test: testEqualsAndNotEquals");
@@ -37,7 +42,8 @@ public class DemoUtilsTest {
     }
 
     @Test
-//    @DisplayName("Null And Not Null")
+    @DisplayName("Null And Not Null")
+    @Order(1)
     void test_Null_And_Not_Null() {
         System.out.println("Running test: testNullAndNotNull");
 
@@ -89,6 +95,7 @@ public class DemoUtilsTest {
 
     @Test
     @DisplayName("Array Equals")
+    @Order(-7)
     void testArrayEquals() {
         String[] stringArray = {"A", "B", "C"};
 
